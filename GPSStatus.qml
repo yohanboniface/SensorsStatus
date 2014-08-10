@@ -17,6 +17,15 @@ MainView {
     width: units.gu(100)
     height: units.gu(75)
 
+    function printableMethod(method) {
+        var out = "source error";
+        if (method === PositionSource.SatellitePositioningMethod) out = "Satellite";
+        else if (method === PositionSource.NoPositioningMethod) out = "Not available";
+        else if (method === PositionSource.NonSatellitePositioningMethod) out = "Non-satellite";
+        else if (method === PositionSource.AllPositioningMethods) out = "All/multiple";
+        return out;
+    }
+
     Page {
         title: i18n.tr("GPS Status")
 
@@ -42,6 +51,11 @@ MainView {
                     checked: geoposition.valid
                     enabled: false
                 }
+            }
+
+            RowField {
+                title: i18n.tr('Method')
+                text: printableMethod(geoposition.positioningMethod)
             }
 
             RowField {
@@ -83,10 +97,8 @@ MainView {
                 id: geoposition
                 active: true
                 updateInterval: 1000
-                onPositionChanged: function (position) {
-                    console.log(position)
-                }
             }
+
         }
     }
 }
