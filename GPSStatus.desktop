@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=GPSStatus
-Exec=qmlscene $@ /usr/share/gpsstatus/GPSStatus.qml
+Exec=qmlscene $@ GPSStatus.qml
 Icon=GPSStatus.png
 Terminal=false
 Type=Application
