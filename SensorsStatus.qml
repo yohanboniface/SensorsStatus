@@ -18,7 +18,7 @@ MainView {
     width: units.gu(100)
     height: units.gu(75)
 
-    function printableMethod(method) {
+    function printablePositionMethod(method) {
         var out = "source error";
         if (method === PositionSource.SatellitePositioningMethod) out = "Satellite";
         else if (method === PositionSource.NoPositioningMethod) out = "Not available";
@@ -161,7 +161,7 @@ MainView {
 
                         RowField {
                             title: i18n.tr('Method')
-                            text: printableMethod(geoposition.positioningMethod)
+                            text: printablePositionMethod(geoposition.positioningMethod)
                         }
 
                         RowField {

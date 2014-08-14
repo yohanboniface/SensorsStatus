@@ -8,8 +8,8 @@
             "desktop": "SensorsStatus.desktop"
         }
     },
-    "maintainer": "Yohan Boniface <yohanboniface@free.fr>",
+    "maintainer": "Yohan Boniface <hi@yohanboniface.me>",
     "name": "me.yohanboniface.sensorsstatus",
     "title": "SensorsStatus",
-    "version": "0.1"
+    "version": "0.0.1"
 }
