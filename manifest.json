@@ -1,15 +1,15 @@
 {
     "architecture": "all",
-    "description": "Listen to your GPS",
+    "description": "Listen to your device sensors",
     "framework": "ubuntu-sdk-14.10-dev2",
     "hooks": {
-        "GPSStatus": {
-            "apparmor": "GPSStatus.json",
-            "desktop": "GPSStatus.desktop"
+        "SensorsStatus": {
+            "apparmor": "SensorsStatus.json",
+            "desktop": "SensorsStatus.desktop"
         }
     },
     "maintainer": "Yohan Boniface <yohanboniface@free.fr>",
-    "name": "me.yohanboniface.gpsstatus",
-    "title": "GPSStatus",
+    "name": "me.yohanboniface.sensorsstatus",
+    "title": "SensorsStatus",
     "version": "0.1"
 }
