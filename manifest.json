@@ -10,6 +10,6 @@
     },
     "maintainer": "Yohan Boniface <hi@yohanboniface.me>",
     "name": "me.yohanboniface.sensorsstatus",
-    "title": "SensorsStatus",
-    "version": "0.0.1"
+    "title": "Sensors Status",
+    "version": "0.0.2"
 }
