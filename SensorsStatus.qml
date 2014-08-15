@@ -224,7 +224,7 @@ MainView {
                             fill: parent
                         }
                         visible: !!gyroscope.connectedToBackend
-                        Accelerometer {
+                        Gyroscope {
                             id: gyroscope
                             active: true
                         }
