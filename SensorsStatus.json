@@ -1,7 +1,8 @@
 {
     "policy_groups": [
         "networking",
-        "location"
+        "location",
+        "sensors"
     ],
     "policy_version": 1.2
 }
