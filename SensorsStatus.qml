@@ -54,15 +54,15 @@ MainView {
                             active: true
                         }
                         RowField {
-                            title: i18n.tr('x')
+                            title: i18n.tr('x (meters/second/second)')
                             text: accelerometer.reading.x
                         }
                         RowField {
-                            title: i18n.tr('y')
+                            title: i18n.tr('y (meters/second/second)')
                             text: accelerometer.reading.y
                         }
                         RowField {
-                            title: i18n.tr('z')
+                            title: i18n.tr('z (meters/second/second)')
                             text: accelerometer.reading.z
                         }
                     }
@@ -91,7 +91,7 @@ MainView {
                             active: true
                         }
                         RowField {
-                            title: i18n.tr('altitude')
+                            title: i18n.tr('altitude (meters)')
                             text: altimeter.reading.altitude || '—'
                         }
                     }
@@ -120,7 +120,7 @@ MainView {
                             active: true
                         }
                         RowField {
-                            title: i18n.tr('azimuth (in degrees)')
+                            title: i18n.tr('azimuth (degrees)')
                             text: compass.reading.azimuth || '—'
                         }
                         RowField {
@@ -166,32 +166,32 @@ MainView {
                         }
 
                         RowField {
-                            title: i18n.tr('Latitude')
+                            title: i18n.tr('Latitude (decimal degrees)')
                             text: geoposition.position.coordinate.latitude || '—'
                         }
 
                         RowField {
-                            title: i18n.tr('Longitude')
+                            title: i18n.tr('Longitude (decimal degrees)')
                             text: geoposition.position.coordinate.longitude || '—'
                         }
 
                         RowField {
-                            title: i18n.tr('Horizontal accuracy')
+                            title: i18n.tr('Horizontal accuracy (meters)')
                             text: geoposition.position.horizontalAccuracy || '—'
                         }
 
                         RowField {
-                            title: i18n.tr('Altitude')
+                            title: i18n.tr('Altitude (meters)')
                             text: geoposition.position.coordinate.altitude || '—'
                         }
 
                         RowField {
-                            title: i18n.tr('Vertical accuracy')
+                            title: i18n.tr('Vertical accuracy (meters)')
                             text: geoposition.position.verticalAccuracy || '—'
                         }
 
                         RowField {
-                            title: i18n.tr('Speed (m/s)')
+                            title: i18n.tr('Speed (meters/second)')
                             text: geoposition.position.speed === -1 ? '—' : geoposition.position.speed
                         }
 
@@ -229,15 +229,15 @@ MainView {
                             active: true
                         }
                         RowField {
-                            title: i18n.tr('x')
+                            title: i18n.tr('x (degrees/second)')
                             text: gyroscope.reading.x
                         }
                         RowField {
-                            title: i18n.tr('y')
+                            title: i18n.tr('y (degrees/second)')
                             text: gyroscope.reading.y
                         }
                         RowField {
-                            title: i18n.tr('z')
+                            title: i18n.tr('z (degrees/second)')
                             text: gyroscope.reading.z
                         }
                     }
@@ -263,7 +263,7 @@ MainView {
                             active: true
                         }
                         RowField {
-                            title: i18n.tr('pressure')
+                            title: i18n.tr('pressure (Pascals)')
                             text: pressure.reading.pressure
                         }
                     }
