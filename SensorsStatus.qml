@@ -54,15 +54,15 @@ MainView {
                             active: true
                         }
                         RowField {
-                            title: i18n.tr('x')
+                            title: i18n.tr('x (m/s/s)')
                             text: accelerometer.reading.x
                         }
                         RowField {
-                            title: i18n.tr('y')
+                            title: i18n.tr('y (m/s/s)')
                             text: accelerometer.reading.y
                         }
                         RowField {
-                            title: i18n.tr('z')
+                            title: i18n.tr('z (m/s/s)')
                             text: accelerometer.reading.z
                         }
                     }
@@ -91,7 +91,7 @@ MainView {
                             active: true
                         }
                         RowField {
-                            title: i18n.tr('altitude')
+                            title: i18n.tr('altitude (m)')
                             text: altimeter.reading.altitude || '—'
                         }
                     }
@@ -120,7 +120,7 @@ MainView {
                             active: true
                         }
                         RowField {
-                            title: i18n.tr('azimuth (in degrees)')
+                            title: i18n.tr('azimuth (º)')
                             text: compass.reading.azimuth || '—'
                         }
                         RowField {
@@ -166,27 +166,27 @@ MainView {
                         }
 
                         RowField {
-                            title: i18n.tr('Latitude')
+                            title: i18n.tr('Latitude (º)')
                             text: geoposition.position.coordinate.latitude || '—'
                         }
 
                         RowField {
-                            title: i18n.tr('Longitude')
+                            title: i18n.tr('Longitude (º)')
                             text: geoposition.position.coordinate.longitude || '—'
                         }
 
                         RowField {
-                            title: i18n.tr('Horizontal accuracy')
+                            title: i18n.tr('Horizontal accuracy (m)')
                             text: geoposition.position.horizontalAccuracy || '—'
                         }
 
                         RowField {
-                            title: i18n.tr('Altitude')
+                            title: i18n.tr('Altitude (m)')
                             text: geoposition.position.coordinate.altitude || '—'
                         }
 
                         RowField {
-                            title: i18n.tr('Vertical accuracy')
+                            title: i18n.tr('Vertical accuracy (m)')
                             text: geoposition.position.verticalAccuracy || '—'
                         }
 
@@ -229,15 +229,15 @@ MainView {
                             active: true
                         }
                         RowField {
-                            title: i18n.tr('x')
+                            title: i18n.tr('x (º/s)')
                             text: gyroscope.reading.x
                         }
                         RowField {
-                            title: i18n.tr('y')
+                            title: i18n.tr('y (º/s)')
                             text: gyroscope.reading.y
                         }
                         RowField {
-                            title: i18n.tr('z')
+                            title: i18n.tr('z (º/s)')
                             text: gyroscope.reading.z
                         }
                     }
@@ -263,7 +263,7 @@ MainView {
                             active: true
                         }
                         RowField {
-                            title: i18n.tr('pressure')
+                            title: i18n.tr('pressure (Pa)')
                             text: pressure.reading.pressure
                         }
                     }
