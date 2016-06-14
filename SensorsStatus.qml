@@ -20,11 +20,21 @@ MainView {
     height: units.gu(75)
 
     function printablePositionMethod(method) {
-        var out = "source error";
+        var out = "Unknown position method";
         if (method === PositionSource.SatellitePositioningMethod) out = "Satellite";
         else if (method === PositionSource.NoPositioningMethod) out = "Not available";
         else if (method === PositionSource.NonSatellitePositioningMethod) out = "Non-satellite";
         else if (method === PositionSource.AllPositioningMethods) out = "All/multiple";
+        return out;
+    }
+
+    function printableSourceError(method) {
+        var out = "Unknown source error";
+        if (method === PositionSource.AccessError) out = "Access error";
+        else if (method === PositionSource.ClosedError) out = "Closed error";
+        else if (method === PositionSource.NoError) out = "No error";
+        else if (method === PositionSource.UnknownSourceError) out = "Unidentified source error";
+        else if (method === PositionSource.SocketError) out = "Socket error";
         return out;
     }
 
@@ -55,15 +65,15 @@ MainView {
                         }
                         RowField {
                             title: i18n.tr('x (m/s/s)')
-                            text: accelerometer.reading.x
+                            text: accelerometer.reading != null ? accelerometer.reading.x : '-'
                         }
                         RowField {
                             title: i18n.tr('y (m/s/s)')
-                            text: accelerometer.reading.y
+                            text: accelerometer.reading != null ? accelerometer.reading.y : '-'
                         }
                         RowField {
                             title: i18n.tr('z (m/s/s)')
-                            text: accelerometer.reading.z
+                            text: accelerometer.reading != null ? accelerometer.reading.z : '-'
                         }
                     }
                 }
@@ -92,7 +102,7 @@ MainView {
                         }
                         RowField {
                             title: i18n.tr('altitude (m)')
-                            text: altimeter.reading.altitude || '—'
+                            text: altimeter.reading != null ? altimeter.reading.altitude : '—'
                         }
                     }
                 }
@@ -121,11 +131,11 @@ MainView {
                         }
                         RowField {
                             title: i18n.tr('azimuth (º)')
-                            text: compass.reading.azimuth || '—'
+                            text: compass.reading != null ? compass.reading.azimuth : '—'
                         }
                         RowField {
                             title: i18n.tr('calibration level')
-                            text: compass.reading.calibrationLevel || '—'
+                            text: compass.reading != null ? compass.reading.calibrationLevel : '—'
                         }
                     }
                 }
@@ -158,6 +168,33 @@ MainView {
                                 checked: geoposition.valid
                                 enabled: false
                             }
+                        }
+
+                        Row {
+                            width: parent.width
+                            spacing: units.gu(1)
+                            anchors.margins: units.gu(0.5)
+
+                            Label {
+                                text: i18n.tr('Active')
+                                anchors.verticalCenter: backendActive.verticalCenter
+                            }
+
+                            CheckBox {
+                                id: backendActive
+                                checked: geoposition.active
+                                enabled: false
+                            }
+                        }
+
+                        RowField {
+                            title: i18n.tr('Source status')
+                            text: printableSourceError(geoposition.sourceError)
+                        }
+
+                        RowField {
+                            title: i18n.tr('Name')
+                            text: geoposition.name
                         }
 
                         RowField {
@@ -230,15 +267,15 @@ MainView {
                         }
                         RowField {
                             title: i18n.tr('x (º/s)')
-                            text: gyroscope.reading.x
+                            text: gyroscope.reading != null ? gyroscope.reading.x : '-'
                         }
                         RowField {
                             title: i18n.tr('y (º/s)')
-                            text: gyroscope.reading.y
+                            text: gyroscope.reading != null ? gyroscope.reading.y : '-'
                         }
                         RowField {
                             title: i18n.tr('z (º/s)')
-                            text: gyroscope.reading.z
+                            text: gyroscope.reading != null ? gyroscope.reading.z : '-'
                         }
                     }
                 }
@@ -264,7 +301,7 @@ MainView {
                         }
                         RowField {
                             title: i18n.tr('pressure (Pa)')
-                            text: pressure.reading.pressure
+                            text: pressure.reading != null ? pressure.reading.pressure : '-'
                         }
                     }
                 }
