@@ -18,5 +18,5 @@ check:
 	qmltestrunner -input tests/unit
 
 run:
-	/usr/bin/qmlscene $@ GPSStatus.qml
+        /usr/bin/qmlscene $@ SensorStatus.qml
 
